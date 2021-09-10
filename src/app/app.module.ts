@@ -8,12 +8,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './components/auth/login/login.component';
+import {NgxWebstorageModule} from "ngx-webstorage";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SignupComponent,
+    LoginComponent,
+
 
   ],
   imports: [
@@ -22,8 +27,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
-  
+    NgbModule,
+    NgxWebstorageModule.forRoot()
+
 
   ],
   providers: [],
