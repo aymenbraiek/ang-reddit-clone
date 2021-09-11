@@ -2,7 +2,8 @@ import { AuthService } from './../../../services/auth.service';
 import { SignupRequestPayload } from './signup-request-payload';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-signup',
@@ -14,9 +15,10 @@ export class SignupComponent implements OnInit {
   signupForm?: FormGroup;
   // j ai creer un interface module qui contient les fields de notre classe sign-up
   signupRequestPayload?: SignupRequestPayload;
+  registerSuccessMessage?: string;
 
 
-  constructor(private fb: FormBuilder, private router: Router,private authService:AuthService) {
+  constructor(private fb: FormBuilder,private activatedRoute: ActivatedRoute, private router: Router,private authService:AuthService, private toastr: ToastrService) {
     //initialiser signupRequestPayload
     this.signupRequestPayload = {
       username: '',
@@ -34,6 +36,7 @@ export class SignupComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
+
   }
   //Buton sign-up effecter le valeur de la form pour notre module
   signup() {
@@ -42,9 +45,13 @@ export class SignupComponent implements OnInit {
     this.signupRequestPayload?.password == this.signupForm?.get('password')?.value;
 
     this.authService.singup(this.signupForm?.value)
-    .subscribe(data=>{
-      console.log(data);
-    })
+      .subscribe(data => {
+        this.router.navigate(['/login'],
+          { queryParams: { registered: 'true' } });
+      }, error => {
+        console.log(error);
+        this.toastr.error('Registration Failed! Please try again');
+      });
 
 
 
