@@ -12,13 +12,14 @@ export class HomeComponent implements OnInit {
   posts$: Array<PostModel> = [];
 
   constructor(private postService:PostService) {
-    this.postService.getAllPosts().subscribe(post => {
-      console.log(post)
-      this.posts$ = post;
-    })
+    
   }
 
   ngOnInit(): void {
+    this.postService.getAllPosts().subscribe(post => {
+      console.log('post data',post)
+      this.posts$ = post;
+    })
   }
 
   upvotePost() {

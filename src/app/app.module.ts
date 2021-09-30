@@ -16,6 +16,11 @@ import { HomeComponent } from './components/home/home.component';
 import {TokenInterceptor} from "./token-interceptor";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { SubredditSideBarComponent } from './components/subreddit-side-bar/subreddit-side-bar.component';
+import { VoteButtonComponent } from './components/vote-button/vote-button.component';
+import { PostTitleComponent } from './components/post-title/post-title.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +28,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SignupComponent,
     LoginComponent,
     HomeComponent,
+    
+    SideBarComponent,
+    SubredditSideBarComponent,
+    VoteButtonComponent,
+    PostTitleComponent,
 
 
   ],

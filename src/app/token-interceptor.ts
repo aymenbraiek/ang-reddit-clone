@@ -4,7 +4,10 @@ import {AuthService} from "./services/auth.service";
 import {BehaviorSubject, Observable, throwError} from "rxjs";
 import {catchError, filter, switchMap, take} from "rxjs/operators";
 import {LoginResponsePayload} from "./components/auth/login/login-response.payload";
-
+//So that means we have to intercept each HTTP request we are making 
+//to our Backend application and check whether the JWT is expired (or) 
+//about to be expired, in that case, we will make a REST call to our backend to generate new JWT 
+//and set the Authorization Header with Bearer Scheme.
 @Injectable({
   providedIn: 'root'
 })
