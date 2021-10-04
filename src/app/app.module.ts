@@ -1,7 +1,6 @@
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -20,6 +19,10 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { SubredditSideBarComponent } from './components/subreddit-side-bar/subreddit-side-bar.component';
 import { VoteButtonComponent } from './components/vote-button/vote-button.component';
 import { PostTitleComponent } from './components/post-title/post-title.component';
+import { CreateSubredditComponent } from './subreddits/create-subreddit/create-subreddit.component';
+import { CreatePostComponent } from './components/posts/create-post/create-post.component';
+import { ListSubredditsComponent } from './subreddits/list-subreddits/list-subreddits.component';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +36,10 @@ import { PostTitleComponent } from './components/post-title/post-title.component
     SubredditSideBarComponent,
     VoteButtonComponent,
     PostTitleComponent,
+    CreateSubredditComponent,
+    CreatePostComponent,
+    ListSubredditsComponent,
+   
 
 
   ],

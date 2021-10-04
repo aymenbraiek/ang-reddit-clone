@@ -11,8 +11,8 @@
               <div class="col-md-6">
                 <input type="text" id="user_name" class="form-control" [formControlName]="'username'" name="user_name" required
                        autofocus>
-                <span *ngIf="!loginForm.get('username')?.valid && loginForm.get('username')?.touched">
-                                   Please provide a valid username
+                <span   *ngIf="!loginForm.get('username')?.valid && loginForm.get('username')?.touched">
+                   Please provide a valid username
                                 </span>
               </div>
             </div>

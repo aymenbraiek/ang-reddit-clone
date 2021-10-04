@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
-import {AuthService} from "./services/auth.service";
+import {AuthService} from "./components/auth/services/auth.service";
 import {BehaviorSubject, Observable, throwError} from "rxjs";
 import {catchError, filter, switchMap, take} from "rxjs/operators";
 import {LoginResponsePayload} from "./components/auth/login/login-response.payload";

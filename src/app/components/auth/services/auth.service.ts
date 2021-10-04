@@ -1,10 +1,10 @@
-import { SignupRequestPayload } from './../components/auth/signup/signup-request-payload';
+import { SignupRequestPayload } from '../signup/signup-request-payload';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {LoginRequestPayload} from "../components/auth/login/login-request.payload";
+import {LoginRequestPayload} from "../login/login-request.payload";
 import {LocalStorageService} from "ngx-webstorage";
-import {LoginResponsePayload} from "../components/auth/login/login-response.payload";
+import {LoginResponsePayload} from "../login/login-response.payload";
 import {map, tap} from "rxjs/operators";
 @Injectable({
   providedIn: 'root'

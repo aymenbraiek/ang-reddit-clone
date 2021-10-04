@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SubredditModel } from 'src/app/services/subreddit-response';
-import { SubredditService } from 'src/app/services/subreddit.service';
+import { SubredditModel } from 'src/app/subreddits/model/subreddit-response';
+import { SubredditService } from 'src/app/subreddits/services/subreddit.service';
 
 @Component({
   selector: 'app-subreddit-side-bar',
