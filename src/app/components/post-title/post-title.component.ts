@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { PostModel } from 'src/app/shared/post-model';
 
@@ -11,12 +11,16 @@ import { PostModel } from 'src/app/shared/post-model';
 export class PostTitleComponent implements OnInit {
   @Input() data?: Array<PostModel>;
   faComments = faComments;
-  id?:number;
-  constructor(private router:Router) { }
+  
+  
+  constructor(private router:Router) { 
+    
+  }
 
   ngOnInit(): void {
   }
-  goToPost(id: number): void {
-  //  this.router.navigateByUrl('/view-post/' + id);
+  goToPost(id: any): void {
+    console.log('id',id)
+    this.router.navigateByUrl('/view-post/' + id);
   }
 }

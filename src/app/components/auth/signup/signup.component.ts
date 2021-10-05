@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
   //on a utiliser reactive form
   signupForm?: FormGroup;
   // j ai creer un interface module qui contient les fields de notre classe sign-up
-  signupRequestPayload?: SignupRequestPayload;
+  signupRequestPayload?: any;
   registerSuccessMessage?: string;
 
 
@@ -40,11 +40,11 @@ export class SignupComponent implements OnInit {
   }
   //Buton sign-up effecter le valeur de la form pour notre module
   signup() {
-    this.signupRequestPayload?.email == this.signupForm?.get('email')?.value;
-    this.signupRequestPayload?.username == this.signupForm?.get('username')?.value;
-    this.signupRequestPayload?.password == this.signupForm?.get('password')?.value;
+    this.signupRequestPayload.email = this.signupForm?.get('email')?.value;
+    this.signupRequestPayload.username = this.signupForm?.get('username')?.value;
+    this.signupRequestPayload.password = this.signupForm?.get('password')?.value;
 
-    this.authService.singup(this.signupForm?.value)
+    this.authService.singup(this.signupRequestPayload)
       .subscribe(data => {
         this.router.navigate(['/login'],
           { queryParams: { registered: 'true' } });

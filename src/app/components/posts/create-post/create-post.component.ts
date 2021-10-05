@@ -16,7 +16,7 @@ export class CreatePostComponent implements OnInit {
   //form
   createPostForm?:FormGroup;
   //Model 
-  postPayload?: CreatePostPayload;
+  postPayload?: any;
   //array of Subreddit
   subreddits$:Array<SubredditModel>=[]
   
@@ -49,15 +49,15 @@ export class CreatePostComponent implements OnInit {
   }
 
   createPost(){
-    this.postPayload?.postName == this.createPostForm?.get('postName')?.value;
-    this.postPayload?.subredditName == this.createPostForm?.get('subredditName')?.value;
-    this.postPayload?.url == this.createPostForm?.get('url')?.value;
-    this.postPayload?.description== this.createPostForm?.get('description')?.value;
+    this.postPayload.postName =this.createPostForm?.get('postName')?.value;
+    this.postPayload.subredditName = this.createPostForm?.get('subredditName')?.value;
+    this.postPayload.url = this.createPostForm?.get('url')?.value;
+    this.postPayload.description= this.createPostForm?.get('description')?.value;
 console.log('data',this.createPostForm?.value)
 
 
 
-this.postService.createPost(this.createPostForm?.value).subscribe(data=>{
+this.postService.createPost(this.postPayload).subscribe(data=>{
  this.router.navigateByUrl('/')
 },error=>{
   throwError(error);

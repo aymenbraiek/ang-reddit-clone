@@ -15,7 +15,7 @@ import {throwError} from "rxjs";
 })
 export class LoginComponent implements OnInit {
   loginForm?: FormGroup;
-  loginRequestPayload?: LoginRequestPayload;
+  loginRequestPayload?: any;
   registerSuccessMessage: string | null=null;
   isError?: boolean;
   constructor(private fb: FormBuilder, private activatedRoute: ActivatedRoute,
@@ -44,12 +44,12 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginRequestPayload?.username == this.loginForm?.get('username')?.value;
-    this.loginRequestPayload?.password == this.loginForm?.get('password')?.value;
+    this.loginRequestPayload.username = this.loginForm?.get('username')?.value;
+    this.loginRequestPayload.password = this.loginForm?.get('password')?.value;
 
 
 
-    this.authService.login(this.loginForm?.value).subscribe(data => {
+    this.authService.login(this.loginRequestPayload).subscribe(data => {
       this.isError = false;
       this.router.navigateByUrl('');
       this.toastr.success('Login Successful');
