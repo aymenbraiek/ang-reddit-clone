@@ -28,6 +28,8 @@ export class CreateSubredditComponent implements OnInit {
       name: ['', Validators.required],
       description: ['', Validators.required]
     });
+
+    
    
   }
 

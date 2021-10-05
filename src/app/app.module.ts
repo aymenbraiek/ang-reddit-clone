@@ -22,6 +22,7 @@ import { PostTitleComponent } from './components/post-title/post-title.component
 import { CreateSubredditComponent } from './subreddits/create-subreddit/create-subreddit.component';
 import { CreatePostComponent } from './components/posts/create-post/create-post.component';
 import { ListSubredditsComponent } from './subreddits/list-subreddits/list-subreddits.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ListSubredditsComponent } from './subreddits/list-subreddits/list-subre
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    FontAwesomeModule
+    FontAwesomeModule,
+    EditorModule
 
 
 

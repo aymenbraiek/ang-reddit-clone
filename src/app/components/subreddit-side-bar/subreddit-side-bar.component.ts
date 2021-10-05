@@ -13,6 +13,7 @@ export class SubredditSideBarComponent implements OnInit {
   constructor(private subredditService:SubredditService) {
     this.subredditService.getAllSubreddits().subscribe(data=>{
       if (data.length > 3) {
+        //juste show 3 element only
         this.subreddits = data.splice(0, 3);
         this.displayViewAll = true;
       } else {
