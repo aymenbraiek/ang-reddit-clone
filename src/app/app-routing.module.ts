@@ -7,11 +7,13 @@ import { CreatePostComponent } from './components/posts/create-post/create-post.
 import { CreateSubredditComponent } from './subreddits/create-subreddit/create-subreddit.component';
 import { ListSubredditsComponent } from './subreddits/list-subreddits/list-subreddits.component';
 import { ViewPostComponent } from './components/posts/view-post/view-post.component';
+import { UserProfileComponent } from './components/auth/user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'view-post/:id', component: ViewPostComponent },
-  { path: 'signup', component: SignupComponent },
+  { path: 'sign-up', component: SignupComponent },
+  { path: 'user-profile/:name', component: UserProfileComponent },
   { path: 'login', component: LoginComponent },
   {path: 'create-post', component: CreatePostComponent },
   { path: 'create-subreddit', component: CreateSubredditComponent},

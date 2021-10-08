@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {PostModel} from "./post-model";
 import { CreatePostPayload } from '../components/posts/create-post/create-post.payload';
 import { SubredditModel } from '../subreddits/model/subreddit-response';
+import { CommentPayload } from '../comment/comment.payload';
 
 @Injectable({
   providedIn: 'root'
@@ -24,4 +25,10 @@ export class PostService {
   getPost(id: number): Observable<PostModel> {
     return this.http.get<PostModel>('http://localhost:8080/api/posts/' + id);
   }
+
+  getAllPostsByUser(name: string): Observable<PostModel[]> {
+    return this.http.get<PostModel[]>('http://localhost:8080/api/posts/by-user/' + name);
+  }
+
+  
 }

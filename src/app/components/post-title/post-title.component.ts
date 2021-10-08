@@ -8,6 +8,7 @@ import { PostModel } from 'src/app/shared/post-model';
   templateUrl: './post-title.component.html',
   styleUrls: ['./post-title.component.css']
 })
+//child 
 export class PostTitleComponent implements OnInit {
   @Input() data?: Array<PostModel>;
   faComments = faComments;
